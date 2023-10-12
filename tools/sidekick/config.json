@@ -7,6 +7,12 @@
       "environments": ["edit"],
       "url": "/tools/sidekick/library.html",
       "includePaths": ["**.docx**"]
+    },
+    {
+      "id": "unsplash_images",
+      "title": "Unsplash Images",
+      "url": "/tools/sidekick/unsplash.html",
+      "environments": ["edit"]
     }
   ]
 }
