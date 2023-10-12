@@ -1,5 +1,12 @@
 {
-    "project": "HLX Tourdoo",
-    "host": "www.tourdoo.com",
-    "plugins": []
-  }
+  "project": "HLX TOURDOO",
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Library",
+      "environments": ["edit"],
+      "url": "/tools/sidekick/library.html",
+      "includePaths": ["**.docx**"]
+    }
+  ]
+}
