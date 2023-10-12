@@ -71,7 +71,7 @@ function sampleRUM(checkpoint, data = {}) {
       };
     }
     const { weight, id, firstReadTime } = window.hlx.rum;
-    if (window.hlx && window.hlx.rum && window.hlx.rum.isSelected) {
+    if (window.hlx?.rum?.isSelected) {
       const knownProperties = [
         'weight',
         'id',
@@ -503,8 +503,7 @@ async function fetchPlaceholders(prefix = 'default') {
  */
 function updateSectionsStatus(main) {
   const sections = [...main.querySelectorAll(':scope > div.section')];
-  for (let i = 0; i < sections.length; i += 1) {
-    const section = sections[i];
+  for (const section of sections) {
     const status = section.dataset.sectionStatus;
     if (status !== 'loaded') {
       const loadingBlock = section.querySelector(

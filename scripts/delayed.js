@@ -5,3 +5,4 @@ import { sampleRUM } from './aem.js';
 sampleRUM('cwv');
 
 // add more delayed functionality here
+console.log('this is a delayed script');
