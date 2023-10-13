@@ -84,6 +84,7 @@
             });
           });
         onsubmit = (e) => {
+          console.log('submit')
           e.preventDefault();
           const searchTerm = document.querySelector('input').value;
           getImages(searchTerm);
