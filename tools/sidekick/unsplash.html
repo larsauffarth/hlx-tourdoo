@@ -90,13 +90,14 @@
         data.results.forEach((result) => {
           console.log(result);
           const img = document.createElement('img');
-          img.src = result.urls.small;
+          const urls = result.urls;
+          img.src = urls.small;
           img.alt = result.alt_description;
           img.title = result.alt_description;
           img.addEventListener('click', () => {
             alert('Image URI copied to clipboard!');
-            console.log('copying to clipboard', result.urls.regular);
-            copyToClipboard(result.urls.regular);
+            console.log('copying to clipboard', urls.regular);
+            copyToClipboard(urls.regular);
           });
           gallery.append(img);
         });
