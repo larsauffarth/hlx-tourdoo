@@ -69,7 +69,14 @@
       // function that copies a string to the clipboard
       const copyToClipboard = (url) => {
         console.log('copying to clipboard', url);
-        navigator.clipboard.writeText(url);
+        navigator.clipboard.writeText(url).then(
+          function () {
+            console.log('Async: Copying to clipboard was successful!');
+          },
+          function (err) {
+            console.error('Async: Could not copy text: ', err);
+          }
+        );
       };
 
       const search = async () => {
