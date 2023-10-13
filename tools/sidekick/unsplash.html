@@ -41,11 +41,16 @@
       }
 
       .gallery {
-        grid: 1fr / repeat(auto-fit, minmax(200px, 1fr));
-        display: grid;
-        gap: 24px;
-
+        display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 24px;
+        padding: 24px;
         
+      }
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
       }
     </style>
     <title>Unsplash Image Picker</title>
@@ -94,7 +99,7 @@
               },
             });
             document.dispatchEvent(event);
-            copyToClipboard(result.urls.regular);
+            copyToClipboard(img);
           });
           gallery.append(img);
         });
