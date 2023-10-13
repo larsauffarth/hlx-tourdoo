@@ -92,13 +92,7 @@
           img.alt = result.alt_description;
           img.title = result.alt_description;
           img.addEventListener('click', () => {
-            const event = new CustomEvent('image-selected', {
-              detail: {
-                src: result.urls.regular,
-                alt: result.alt_description,
-              },
-            });
-            document.dispatchEvent(event);
+            alert('Image copied to clipboard!');
             copyToClipboard(img);
           });
           gallery.append(img);
