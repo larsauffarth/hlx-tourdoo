@@ -83,12 +83,11 @@
               gallery.append(img);
             });
           });
-        onsubmit = (e) => {
-          console.log('submit')
-          e.preventDefault();
+
+        document.querySelector('button').addEventListener('click', () => {
           const searchTerm = document.querySelector('input').value;
           getImages(searchTerm);
-        };
+        });
       };
 
       const unsplash = document.createElement('sidekick-unsplash');
