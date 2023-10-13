@@ -88,6 +88,7 @@
         const gallery = document.querySelector('.gallery');
         gallery.innerHTML = '';
         data.results.forEach((result) => {
+          console.log(result);
           const img = document.createElement('img');
           img.src = result.urls.small;
           img.alt = result.alt_description;
