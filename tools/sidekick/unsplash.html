@@ -62,7 +62,9 @@
       <input type="text" placeholder="Search Unsplash" />
       <button onclick="search()">Search</button>
     </div>
-    <div class="gallery">no results found!</div>
+    <div class="gallery">
+      <p>no results found!</p>
+    </div>
     <script>
       // function that copies a string to the clipboard
       const copyToClipboard = (url) => {
@@ -92,7 +94,7 @@
           img.title = result.alt_description;
           img.addEventListener('click', () => {
             alert('Image URI copied to clipboard!');
-            copyToClipboard(img.src);
+            copyToClipboard(result.urls.small);
           });
           gallery.append(img);
         });
