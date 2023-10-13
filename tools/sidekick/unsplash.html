@@ -57,7 +57,9 @@
         navigator.clipboard.writeText(url);
       };
 
-      const search = (searchTerm) => {
+      const search = () => {
+        document.querySelector('.gallery').innerHTML = 'loading...';
+        const searchTerm = document.querySelector('input').value;
         console.log('searching for', searchTerm);
         const authorizationHeaderData =
           'Client-ID xsxi7NrPJu8vYz6PwFrrrs0CMLsHqIi9DtzWMz4-7Pg';
