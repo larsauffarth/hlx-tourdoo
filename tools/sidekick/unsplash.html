@@ -68,6 +68,7 @@
     <script>
       // function that copies a string to the clipboard
       const copyToClipboard = (url) => {
+        console.log('copying to clipboard', url);
         navigator.clipboard.writeText(url);
       };
 
