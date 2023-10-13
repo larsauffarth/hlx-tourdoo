@@ -41,11 +41,10 @@
       }
 
       .gallery {
-        display:grid;
+        display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-gap: 24px;
         padding: 24px;
-        
       }
       img {
         width: 100%;
@@ -92,8 +91,8 @@
           img.alt = result.alt_description;
           img.title = result.alt_description;
           img.addEventListener('click', () => {
-            alert('Image copied to clipboard!');
-            copyToClipboard(img);
+            alert('Image URI copied to clipboard!');
+            copyToClipboard(result.urls.regular);
           });
           gallery.append(img);
         });
