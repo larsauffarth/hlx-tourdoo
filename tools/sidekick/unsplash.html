@@ -87,6 +87,7 @@
         document
           .getElementById('SearchButton')
           .addEventListener('click', () => {
+            preventDefault();
             console.log('search button clicked');
             const searchTerm = document.querySelector('input').value;
             console.log('searchTerm', searchTerm);
