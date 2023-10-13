@@ -48,7 +48,7 @@
     <h1>Select an image to insert into your page.</h1>
     <div class="px">
       <input type="text" placeholder="Search Unsplash" />
-      <button>Search</button>
+      <button id="SearchButton">Search</button>
     </div>
     <div class="gallery">no results found!</div>
     <script>
@@ -84,11 +84,14 @@
             });
           });
 
-        document.querySelector('button').addEventListener('click', () => {
-          const searchTerm = document.querySelector('input').value;
-          console.log('searchTerm', searchTerm);
-          getImages(searchTerm);
-        });
+        document
+          .getElementById('SearchButton')
+          .addEventListener('click', () => {
+            console.log('search button clicked');
+            const searchTerm = document.querySelector('input').value;
+            console.log('searchTerm', searchTerm);
+            getImages(searchTerm);
+          });
       };
 
       const unsplash = document.createElement('sidekick-unsplash');
