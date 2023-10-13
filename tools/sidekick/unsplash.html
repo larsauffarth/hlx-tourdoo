@@ -71,7 +71,7 @@
         })
           .then((response) => {
             console.log('response', response.status);
-            response.body.json();
+            const data = response.json();
           })
           .then((data) => {
             console.log(data);
