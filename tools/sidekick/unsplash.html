@@ -95,7 +95,8 @@
           img.title = result.alt_description;
           img.addEventListener('click', () => {
             alert('Image URI copied to clipboard!');
-            copyToClipboard(result.urls.small);
+            console.log('copying to clipboard', result.urls.regular);
+            copyToClipboard(result.urls.regular);
           });
           gallery.append(img);
         });
