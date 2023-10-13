@@ -52,9 +52,9 @@
     </div>
     <div class="gallery">no results found!</div>
     <script>
-      const authorizationHeaderData =
-        'Client-ID xsxi7NrPJu8vYz6PwFrrrs0CMLsHqIi9DtzWMz4-7Pg';
       const getImages = (searchTerm) => {
+        const authorizationHeaderData =
+          'Client-ID xsxi7NrPJu8vYz6PwFrrrs0CMLsHqIi9DtzWMz4-7Pg';
         const url = `https://api.unsplash.com/search/photos?query=${searchTerm}&per_page=10`;
         fetch(url, {
           headers: {
@@ -86,6 +86,7 @@
 
         document.querySelector('button').addEventListener('click', () => {
           const searchTerm = document.querySelector('input').value;
+          console.log('searchTerm', searchTerm);
           getImages(searchTerm);
         });
       };
