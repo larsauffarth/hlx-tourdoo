@@ -68,33 +68,30 @@
           headers: {
             Authorization: authorizationHeaderData,
           },
-        })
-          .then((response) => {
-            console.log('response', response.status);
-            const data = response.json();
-          })
-          .then((data) => {
-            console.log(data);
-            const gallery = document.querySelector('.gallery');
-            gallery.innerHTML = '';
-            data.results.forEach((result) => {
-              const img = document.createElement('img');
-              img.src = result.urls.small;
-              img.alt = result.alt_description;
-              img.title = result.alt_description;
-              img.addEventListener('click', () => {
-                const event = new CustomEvent('image-selected', {
-                  detail: {
-                    src: result.urls.regular,
-                    alt: result.alt_description,
-                  },
-                });
-                document.dispatchEvent(event);
-                copyToClipboard(result.urls.regular);
+        }).then((response) => {
+          console.log('response', response.status);
+          const data = response.json();
+          console.log(data);
+          const gallery = document.querySelector('.gallery');
+          gallery.innerHTML = '';
+          data.results.forEach((result) => {
+            const img = document.createElement('img');
+            img.src = result.urls.small;
+            img.alt = result.alt_description;
+            img.title = result.alt_description;
+            img.addEventListener('click', () => {
+              const event = new CustomEvent('image-selected', {
+                detail: {
+                  src: result.urls.regular,
+                  alt: result.alt_description,
+                },
               });
-              gallery.append(img);
+              document.dispatchEvent(event);
+              copyToClipboard(result.urls.regular);
             });
+            gallery.append(img);
           });
+        });
       };
 
       const unsplash = document.createElement('sidekick-unsplash');
